@@ -10,7 +10,8 @@ module bram12
     Di,
     Do,
     A,
-    SDA
+    SDA,
+    SCL
 );
 
     input   wire            CLK;
@@ -20,6 +21,7 @@ module bram12
     output  wire     [31:0]  Do;
     input   wire    [11:0]   A; 
     inout SDA;
+output SCL;
     assign SDA = z;
     //  11 words
 	reg [31:0] RAM[0:11];
