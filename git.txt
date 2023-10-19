@@ -1,0 +1,4 @@
+git status
+git add .
+git commit -m "打一些東西"
+git push
