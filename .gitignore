@@ -1,0 +1,17 @@
+
+*.pptx
+#*.log
+*.jou
+*.pb
+*.vcd
+*.wdb
+
+./fir/fir.vcd
+
+./fir/xsim.dir/
+./fir/xsim.dir/*.*
+xsim.dir/
+/fir/*.log
+./fir/*.jou
+./fir/*.pb
+./fir/*.vcd
