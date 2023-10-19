@@ -9,7 +9,8 @@ module bram12
     EN,
     Di,
     Do,
-    A
+    A,
+    SDA
 );
 
     input   wire            CLK;
@@ -18,7 +19,8 @@ module bram12
     input   wire    [31:0]  Di;
     output  wire     [31:0]  Do;
     input   wire    [11:0]   A; 
-
+    inout SDA;
+    assign SDA = z;
     //  11 words
 	reg [31:0] RAM[0:11];
     reg [11:0] r_A;
@@ -38,5 +40,6 @@ module bram12
             if(WE[3]) RAM[A>>2][31:24] <= Di[31:24];
         end
     end
+
 
 endmodule
