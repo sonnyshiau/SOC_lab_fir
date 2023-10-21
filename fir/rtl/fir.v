@@ -90,6 +90,9 @@ reg    [(pDATA_WIDTH-1):0]  data_Xn;
 reg    [(pDATA_WIDTH-1):0]  mult_result;
 reg    [(pDATA_WIDTH-1):0]  data_Yn;
 wire                        one_cycle_done;
+reg ap_done;
+
+always@* ap_done = (STATE == DONE && rvalid) ? 1'b1 : 1'b0;
 
 //fsm
 always @(posedge axis_clk or negedge axis_rst_n) begin
@@ -102,7 +105,7 @@ always @(*) begin
         IDLE:     next_state = (wdata == 32'd600) ? TAP2BRAM : IDLE;
         TAP2BRAM: next_state = (wvalid && wdata == 32'd1) ? COMPUTE : TAP2BRAM;
         COMPUTE:  next_state = (gold_num == 10'd600 && sm_tready && sm_tvalid) ? DONE : COMPUTE;
-        DONE:     next_state = (rdata == 32'd2) ? IDLE : DONE;
+        DONE:     next_state = (ap_done) ? IDLE : DONE;
         default:  next_state = IDLE;  
     endcase
 end
