@@ -316,9 +316,10 @@ always @(posedge axis_clk or negedge axis_rst_n) begin
 end
 always@*begin
     if (STATE == COMPUTE && one_cycle_done)
-        gold_num_next <= gold_num + 1;
-    else
-        gold_num_next <= gold_num;
+        gold_num_next = gold_num + 1;
+    else if (gold_num >= 601)
+        gold_num_next = 0;
+    else gold_num_next = gold_num;
 end
 
 //ss_tready delay 5 clk
