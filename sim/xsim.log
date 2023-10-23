@@ -2,12 +2,12 @@
 # xsim v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Thu Oct 19 10:04:47 2023
-# Process ID: 177523
-# Current directory: /home/ubuntu/caravel-soc_fpga-lab/lab-fir/wave/fir
+# Start of session at: Thu Oct 19 06:32:57 2023
+# Process ID: 160223
+# Current directory: /home/ubuntu/caravel-soc_fpga-lab/lab-fir/fir
 # Command line: xsim -mode tcl -source {xsim.dir/fir_tb_elab/xsim_script.tcl}
-# Log file: /home/ubuntu/caravel-soc_fpga-lab/lab-fir/wave/fir/xsim.log
-# Journal file: /home/ubuntu/caravel-soc_fpga-lab/lab-fir/wave/fir/xsim.jou
+# Log file: /home/ubuntu/caravel-soc_fpga-lab/lab-fir/fir/xsim.log
+# Journal file: /home/ubuntu/caravel-soc_fpga-lab/lab-fir/fir/xsim.jou
 # Running On: ubuntu2004, OS: Linux, CPU Frequency: 2112.000 MHz, CPU Physical cores: 6, Host memory: 12802 MB
 #-----------------------------------------------------------
 source xsim.dir/fir_tb_elab/xsim_script.tcl
@@ -631,12 +631,17 @@ OK: exp =           0, rdata =           0
 OK: exp =           0, rdata =           0
 [PASS] [Pattern        597] Golden answer:       -1281, Your answer:       -1281
 ------End the data input(AXI-Stream)------
+------------Start simulation 2-----------
+----Start the data input(AXI-Stream)----
 [PASS] [Pattern        598] Golden answer:       -1098, Your answer:       -1098
 [PASS] [Pattern        599] Golden answer:        -915, Your answer:        -915
 OK: exp =           2, rdata =           2
 OK: exp =           4, rdata =           4
 ---------------------------------------------
 -----------Congratulations! Pass-------------
-$finish called at time : 72725 ns : File "/home/ubuntu/caravel-soc_fpga-lab/lab-fir/wave/fir/tb/fir_tb.v" Line 193
+             9999995Simualtion Hang ....
+$finish called at time : 9999995 ns : File "/home/ubuntu/caravel-soc_fpga-lab/lab-fir/fir/tb/fir_tb.v" Line 307
+run: Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:11 . Memory (MB): peak = 2787.340 ; gain = 0.000 ; free physical = 3560 ; free virtual = 8251
 exit
-INFO: [Common 17-206] Exiting xsim at Thu Oct 19 10:04:50 2023...
+INFO: xsimkernel Simulation Memory Usage: 113856 KB (Peak: 167028 KB), Simulation CPU Usage: 11000 ms
+INFO: [Common 17-206] Exiting xsim at Thu Oct 19 06:33:11 2023...
